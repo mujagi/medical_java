@@ -13,12 +13,15 @@ public class C0618_08 {
 		int count = 0;
 		for(int i = 0; i<lotto.length; i++ ) {
 			lotto[i] = (int)(Math.random()*45)+1;
-			for(int j = 0; j<i; j++) {
-				if(lotto[i] == lotto[j]) {
-					i--;
-					break;
-				} // if문
-			} // 두번째 for문
+			if(i!=0) {
+				for(int j = 0; j<i; j++) {
+					if(lotto[i] == lotto[j]) {
+						i--;
+						break;
+					} // if문
+				} // 두번째 for문
+				
+			}
 		} // 첫번째 for문
 		for(int i=0; i<mylotto.length; i++) {
 			System.out.printf("%d 번째 숫자를 입력하세요>>",i+1);
