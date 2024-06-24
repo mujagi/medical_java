@@ -14,7 +14,8 @@ public class C0619_학생성적_test {
 		int[][]score = new int[STU][4]; // 총학생수, 국어, 영어, 수학, 총합 
 		double[] avg = new double[STU]; // 평균 소수점이 발생 하므로 double
 		int s_count = 0 ; // 학생입력받을 때 1씩 증가하기 위한 count
-		String[] title = {"학번","이름","국어","영어","수학","합계","평균"};
+		int[] rank = new int[STU]; 
+		String[] title = {"학번","이름","국어","영어","수학","합계","평균","등수"};
 		
 		//프로그램 시작
 		Loop1 :while(true) {
@@ -22,7 +23,9 @@ public class C0619_학생성적_test {
 			System.out.println(" 1. 성적입력 ");
 			System.out.println(" 2. 성적출력 ");
 			System.out.println(" 3. 성적수정 ");
-			System.out.println(" 4. 프로그램종료 ");
+			System.out.println(" 4. 학생검색 ");
+			System.out.println(" 5. 등수처리 ");
+			System.out.println(" 6. 프로그램종료 ");
 			System.out.println("---------------");
 			
 			System.out.println("원하시는 번호를 입력해주세요. >> ");
@@ -153,8 +156,34 @@ public class C0619_학생성적_test {
 				}// for
 			
 				break;
+			case 4:
+				System.out.println("[ 학생검색 ]");
+				System.out.println("검색하실 학생의 이름을 입력해주세요. >> ");
+				String temp = scan.nextLine();
+				for(int i=0; i<s_count;i++) {
+					if(name[i].contains(temp)) {
+						System.out.printf("%s 학생이 검색되었습니다. \t",name[i]);
+						System.out.println("[ 성적출력 ]");
+						for(int j = 0; j<title.length; j++) {
+							System.out.print(title[j]+"\t");
+						} // 타이틀 출력 for
+						System.out.println();
+						for(int k = 0; k<s_count; k++) {
+							System.out.print(stuNo[k]+"\t");
+							System.out.print(name[k]+"\t");
+							System.out.printf("%d\t %d\t %d\t %d\t %.2f %d \n",score[k][0],score[k][1],score[k][2],score[k][3],avg[k],rank[k]);
+						} // 입력값 출력 for
+					}
+				}
+				break;
+			
+			case 5:
+				System.out.println("[ 등수처리 ]");
+				System.out.println("등수처리를 진행합니다.");
+				break;
 				
-			case 4 :
+				
+			case 6 :
 				System.out.println("[ 프로그램 종료 ]");
 				System.out.println("프로그램을 종료합니다.");
 				break Loop1; //while문 종료

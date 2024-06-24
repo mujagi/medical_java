@@ -32,6 +32,8 @@ public class C0620_학생성적 {
 			int choice = scan.nextInt();
 			scan.nextLine(); // nextInt 다음에 질문지를 추가작성하면 무조건 삽입
 			
+			
+			
 			switch(choice) {
 			case 1:
 				while(true) {
