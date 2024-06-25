@@ -1,5 +1,6 @@
 package p0618;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class C0618_08 {
@@ -23,6 +24,7 @@ public class C0618_08 {
 				
 			}
 		} // 첫번째 for문
+		System.out.println(Arrays.toString(lotto));
 		for(int i=0; i<mylotto.length; i++) {
 			System.out.printf("%d 번째 숫자를 입력하세요>>",i+1);
 			mylotto[i] = scan.nextInt();
